@@ -1,0 +1,108 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'Pixel';
+  src: url('../fonts/Pixel.ttf');
+}
+
+body {
+  margin: 10px;
+  background-color: #0D262D;
+  color: #fff;
+  height: 100%;
+}
+
+.conteudo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100%;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+[wm-flappy] {
+  display: flex;
+  justify-content: space-between;    
+  position: relative;
+  width: 80vw;
+  height: 80vh;
+  background-image: url('../imgs/background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+}
+
+       
+
+.barrier-top{
+  position: absolute;
+  width: 85px;
+  height: 30vh;
+  background: linear-gradient(to bottom, #4caf50, #8bc34a);
+  top: 0;
+  border: 1px solid #000;
+  
+  &::before {
+      content: "";
+      position: absolute;
+      width: 95px;
+      height: 20px;
+      background: linear-gradient(to bottom, #4caf50, #8bc34a);
+      border: 1px solid #000;
+      bottom: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+  }
+}
+
+.barrier-bottom{
+  position: absolute;
+  width: 85px;
+  height: 30vh;
+  background: linear-gradient(to bottom, #4caf50, #8bc34a);
+  bottom: 0;
+  border: 1px solid #000;  
+
+  &::before {
+      content: "";
+      position: absolute;
+      width: 95px;
+      height: 20px;
+      background: linear-gradient(to bottom, #4caf50, #8bc34a);
+      border: 1px solid #000;
+      top: -20px;
+      left: 50%;  
+      transform: translateX(-50%);
+  }
+}
+
+.bird {
+  position: absolute;
+  width: 80px;
+  height: 73px;
+  background-image: url('../imgs/passaro1.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  bottom: 50%;
+  left: 50%;
+  border: none;
+  outline: none;
+  z-index: 100;
+}
+
+.progresso {
+  position: absolute;
+    top: 10px;
+    right: 10px;
+    font-family: 'Pixel';
+    font-size: 70px;
+    z-index: 200;
+  
+}
